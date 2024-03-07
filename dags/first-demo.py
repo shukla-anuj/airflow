@@ -5,7 +5,7 @@ from airflow.operators.bash import BashOperator
 from datetime import timedelta,datetime
 
 with DAG(
-    "tutorial",
+    "tutorial-firstdag-anuj",
     default_args={
         "depend_on_past":False,
         "email":["anujshukla4585@gmail.com"],
