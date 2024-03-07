@@ -1,0 +1,22 @@
+name: build and deploy
+on: [push]
+jobs:
+  build:
+    steps:
+      - uses: action/checkout@v4
+      - name: setup python
+        uses: action/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirement.txt
+          pip install build
+
+      - name : run test case
+        run: pip test
+
+      - name : build packages
+        run: python -m build
