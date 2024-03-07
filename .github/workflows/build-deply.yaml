@@ -4,9 +4,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v4
+      - uses: action/checkout@v3
       - name: setup python
-        uses: action/setup-python@v4
+        uses: action/setup-python@main
         with:
           python-version: '3.9'
 
